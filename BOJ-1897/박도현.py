@@ -5,7 +5,7 @@ d, first = sys.stdin.readline().split()
 d = int(d)
 wlist = []
 
-wlist = [[]for _ in range(81)]
+wlist = [[]for _ in range(82)]
 
 for _ in range(d):
     a = input()
@@ -21,22 +21,27 @@ while q :
     last = 0
     lena = len(a)
 
-    for i in wlist[len(a)+1]:
+    for i in wlist[lena+1]:
+        
+        if len(set(i) - set(a)) >= 2:
+            continue
         
         ind=lena
         for j in range(lena) :
             if i[j] != a[j]:
-                ind = j
-            
-            if i[ind+1:] in a :
-                last = 1 
-                q.append(i)
-            break
+                ind = j            
+                break
 
+        if i[ind+1:] == a[ind:] :
+            if i not in q:
+                q.append(i)
+            last = 1 
 
     if last == 0 and maxn < lena:
-        maxn = lena
-        maxw = a
+            maxn = lena
+            maxw = a
 
-print(wlist)
-print(maxw)
+if maxw == first and first not in  wlist[len(first)]:
+    print(0)
+else:
+    print(maxw)
