@@ -3,38 +3,8 @@
 using namespace std;
 
 vector<string> words;
+unordered_map<string,int> mp;
 string ans;
-
-void bfs(string first) {
-    queue<pair<string, int>> Q;
-    Q.push({first, 0});
-    while (!Q.empty()) {
-        string target = Q.front().first;
-        int start = Q.front().second;
-        ans = target;
-        Q.pop();
-        for (int i = start; i < words.size(); i++) {
-            if (words[i].length() == target.length() + 1)
-                if (words[i].find(target) != string::npos) {
-                    Q.push({words[i], i});
-                    continue;
-                }
-            int idx = 0;
-            int t_idx = 0;
-            while (idx < words[i].length()) {
-                if (words[i][idx] == target[t_idx]) {
-                    t_idx++;
-                }
-                idx++;
-            }
-            if (t_idx == target.length()) {
-                Q.push({words[i], i});
-            }
-        }
-
-    }
-}
-
 
 int main() {
     ios_base::sync_with_stdio(0);
@@ -43,11 +13,27 @@ int main() {
     int n;
     string str, input;
     cin >> n >> str;
+    mp[str]++;
+    ans = str;
     while (n--) {
         cin >> input;
         words.push_back(input);
     }
-    sort(words.begin(), words.end());
-    bfs(str);
+    sort(words.begin(),words.end() ,[&](string a , string b){
+        return a.length() < b.length();
+    });
+    for (auto word : words) {
+        int len  = word.length();
+        for (int i = 0; i < len; ++i) {
+            string tmp = "";
+            tmp = word.substr(0,i)+word.substr(i+1);
+            if (mp[tmp]){
+                mp[word]++;
+                if (word.length() > ans.length()){
+                    ans = word;
+                }
+            }
+        }
+    }
     cout << ans;
 }
