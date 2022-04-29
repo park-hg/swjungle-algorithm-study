@@ -21,8 +21,8 @@ for strs in str_list:
         continue
 
     for i in range(len(strs)):
-        print(strs[:i] + strs[i+1:])
-        temp = strs[:i+1] + strs[i+2:]
+        #print(strs[:i] + strs[i+1:])
+        temp = strs[:i] + strs[i+1:]
         if temp in dic :
             dic.append(strs)
             break
