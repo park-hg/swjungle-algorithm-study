@@ -1,3 +1,4 @@
+#실패
 import sys
 import copy
 sys.stdin = open('sample.txt')
