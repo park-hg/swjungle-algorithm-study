@@ -8,6 +8,7 @@ n, m = map(int, input().rstrip().split())
 rides_lst = list(map(int, input().rstrip().split()))
 
 if m >= n : 
+  print(n)
   sys.exit()
 
 l, r = 0, 2000000000*30
