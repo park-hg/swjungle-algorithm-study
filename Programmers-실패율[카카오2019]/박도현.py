@@ -4,7 +4,6 @@ def solution(N, stages):
     dodal = [0]*len(stages+1)
     ans = []
     ans2 = []
-    maxnum = 2
     for i in stages:
         for j in range(1,len(i)):
             dodal[j] +=1
