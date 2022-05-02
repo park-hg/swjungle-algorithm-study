@@ -42,3 +42,4 @@
 |출처|문제| 난이도 |
 |:---|:--- |:----|
 |2019 KAKAO BLIND RECRUITMENT|[실패율](https://programmers.co.kr/learn/courses/30/lessons/42889)| 레벨 1 |
+|2022 KAKAO BLIND RECRUITMENT|[주차 요금 계산](https://programmers.co.kr/learn/courses/30/lessons/92341)| 레벨 2 |
