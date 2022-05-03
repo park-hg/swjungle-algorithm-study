@@ -39,6 +39,24 @@ def solution(fees, records):
             money[idx] += fee
             time[idx] = 0
 
+            for i in range(1000):
+                if time[i] != 0:
+                    in_hour, in_min = int(time[i].split(":"))
+                    out_hour, out_min = 23,59
+
+                    in_time = in_hour*60 + in_min
+                    out_time = out_hour*60 + out_min
+                    
+                    total = out_time-in_time
+                    fee = 0
+                    if total <=300:
+                        fee = 5000
+                    else :
+                        fee = 5000 + ((total-300)//10)*600
+
+                        money[i] += fee
+                        time[i] = 0
+
     return answer
 
 
