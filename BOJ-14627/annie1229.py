@@ -11,7 +11,7 @@ for _ in range(S):
     ingredients.append(ingredient)
     total += ingredient
 start = 0
-end = min(ingredients)
+end = max(ingredients)
 result = 0
 
 while start <= end:
