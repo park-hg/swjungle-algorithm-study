@@ -35,7 +35,7 @@
 |1561|[놀이 공원](https://www.acmicpc.net/problem/1561)| 골드 2 |
 |1897|[토달기](https://www.acmicpc.net/problem/1897)| 골드 5 |
 |2448|[별찍기 11](https://www.acmicpc.net/problem/2448)| 골드 4 |
-
+|14627|[파닭파닭](https://www.acmicpc.net/problem/14627)| 실버 3 |
 
 ### ✨ PROGRAMMERS
 
