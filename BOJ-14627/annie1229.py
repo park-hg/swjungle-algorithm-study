@@ -1,4 +1,4 @@
-# 7. 파닭파닭(BOJ #14627) 아직 푸는 중
+# 7. 파닭파닭(BOJ #14627)
 import sys
 sys.stdin = open('input.txt')
 input = sys.stdin.readline
@@ -11,7 +11,7 @@ for _ in range(S):
     ingredients.append(ingredient)
     total += ingredient
 start = 0
-end = min(ingredients)
+end = max(ingredients)
 result = 0
 
 while start <= end:
