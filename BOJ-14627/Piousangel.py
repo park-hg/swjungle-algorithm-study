@@ -32,6 +32,9 @@ while left <= right :
 
 answer = sum(pa_list) - (temp * dak_n)
 
+# for pa in pa_list :""
+#     answer += pa % temp
+
 print(answer)
 
 
