@@ -1,5 +1,4 @@
 from collections import defaultdict
-import math
 def solution(enroll, referral, seller, amount):
     graph = defaultdict(list)
     for a, b in zip(enroll, referral):
