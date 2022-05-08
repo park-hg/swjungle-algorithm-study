@@ -3,10 +3,6 @@ klist = []
 q = []
 length = 0
 
-def find_up(p):
-
-def find_down(p):
-
 def sol(a):
     global length
     global ptr
@@ -22,12 +18,25 @@ def sol(a):
 
     elif a[0] == "C":
         klist[ptr] = 0
+        q.append(ptr)
+        save_p = ptr
         ptr += 1
-
-
-    else :
-
         
+        while klist[ptr] == 1:
+            ptr +=1
+            if ptr == length:
+                ptr = save_p
+                break
+
+        if ptr == save_p:
+            while klist[ptr] == 1:
+                ptr -=1
+                if ptr == -1:
+                    break
+    else :
+        rb = q.pop()
+        klist[rb] = 1
+
 def solution(n, k, cmd):
     global ptr
     global length
@@ -36,9 +45,14 @@ def solution(n, k, cmd):
     klist =[1]*n    
     ptr = k
 
+    for i in cmd :
+        sol(i)
 
+    answer = ''    
+    for i in range(length) :
+        if i ==1:
+            answer += klist[i]
 
-    answer = ''
     return answer
 
 
