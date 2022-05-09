@@ -1,8 +1,6 @@
 def solution(n, k, cmd):
     numbers = list(range(n))
-    erased = [False]*n
     idx = k
-    size = n
     z = []
     for c in cmd:
         c = c.split()
