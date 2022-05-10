@@ -6,14 +6,16 @@ length = 0
 def sol(a):
     global length
     global ptr
+    global klist
+
     if a[0] == "D":
-        ptr += a[2]
-        while klist[ptr] == 1:
+        ptr += int(a[2])
+        while klist[ptr] == 0:
             ptr +=1
 
     elif a[0] == "U":
-        ptr -= a[2]
-        while klist[ptr] == 1:
+        ptr -= int(a[2])
+        while klist[ptr] == 0:
             ptr -=1
 
     elif a[0] == "C":
@@ -22,17 +24,24 @@ def sol(a):
         save_p = ptr
         ptr += 1
         
-        while klist[ptr] == 1:
-            ptr +=1
-            if ptr == length:
-                ptr = save_p
-                break
-
-        if ptr == save_p:
-            while klist[ptr] == 1:
+        if ptr == length:
+            ptr -=1
+            while klist[ptr] == 0:
                 ptr -=1
                 if ptr == -1:
                     break
+        else :
+            while klist[ptr] == 0:
+                ptr +=1
+                if ptr == length:
+                    ptr = save_p
+                    break
+
+            if ptr == save_p:
+                while klist[ptr] == 0:
+                    ptr -=1
+                    if ptr == -1:
+                        break
     else :
         rb = q.pop()
         klist[rb] = 1
@@ -40,7 +49,8 @@ def sol(a):
 def solution(n, k, cmd):
     global ptr
     global length
-    
+    global klist
+
     length = n
     klist =[1]*n    
     ptr = k
