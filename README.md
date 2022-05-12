@@ -49,6 +49,7 @@
 |2021 Dev-Matching: 웹 백엔드 개발자(상반기)|[다단계 칫솔 판매](https://programmers.co.kr/learn/courses/30/lessons/77486)| 레벨 3 |
 |2021 카카오 채용연계형 인턴십|[표 편집](https://programmers.co.kr/learn/courses/30/lessons/81303)| 레벨 3 |
 |2021 KAKAO BLIND RECRUITMENT|[순위 검색](https://programmers.co.kr/learn/courses/30/lessons/72412)| 레벨 2 |
+|2022 KAKAO BLIND RECRUITMENT|[신고 결과 받기](https://programmers.co.kr/learn/courses/30/lessons/92334)| 레벨 1 |
 
 ### ✨ LEETCODE
 
