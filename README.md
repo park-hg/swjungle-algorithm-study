@@ -33,12 +33,12 @@
 |번호|문제| 난이도 |
 |:---|:--- |:----|
 |1561|[놀이 공원](https://www.acmicpc.net/problem/1561)| 골드 2 |
+|1707|[이분 그래프](https://www.acmicpc.net/problem/1707)| 골드 4 |
 |1764|[듣보잡](https://www.acmicpc.net/problem/1764)| 실버 4 |
 |1897|[토달기](https://www.acmicpc.net/problem/1897)| 골드 5 |
 |2022|[사다리](https://www.acmicpc.net/problem/2022)| 실버 1 |
 |2448|[별찍기 11](https://www.acmicpc.net/problem/2448)| 골드 4 |
 |14627|[파닭파닭](https://www.acmicpc.net/problem/14627)| 실버 3 |
-|1707|[이분 그래프](https://www.acmicpc.net/problem/1707)| 골드 4 |
 ### ✨ PROGRAMMERS
 
 |출처|문제| 난이도 |
