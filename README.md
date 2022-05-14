@@ -38,8 +38,8 @@
 |1897|[토달기](https://www.acmicpc.net/problem/1897)| 골드 5 |
 |2022|[사다리](https://www.acmicpc.net/problem/2022)| 실버 1 |
 |2448|[별찍기 11](https://www.acmicpc.net/problem/2448)| 골드 4 |
-|14627|[파닭파닭](https://www.acmicpc.net/problem/14627)| 실버 3 |
 |14503|[로봇청소기](https://www.acmicpc.net/problem/14503)| 골드 5 |
+|14627|[파닭파닭](https://www.acmicpc.net/problem/14627)| 실버 3 |
 ### ✨ PROGRAMMERS
 
 |출처|문제| 난이도 |
