@@ -29,23 +29,22 @@ def dfs(rr, cc, dir):
         dfs(next_rr, next_cc, dir)
     else:
         rotation_count += 1
-    
-    if rotation_count > 3:
-        if dir == 0:
-            rr += 1
-        elif dir == 1:
-            cc -= 1
-        elif dir == 2:
-            rr -= 1
-        else:
-            cc += 1
+        if rotation_count > 3:
+            if dir == 0:
+                rr += 1
+            elif dir == 1:
+                cc -= 1
+            elif dir == 2:
+                rr -= 1
+            else:
+                cc += 1
 
-        if room_map[rr][cc]:
-            print(clean_count)
-            exit(0)
-        else:
-            rotation_count = 0
-    dfs(rr, cc, dir)
+            if room_map[rr][cc]:
+                print(clean_count)
+                exit(0)
+            else:
+                rotation_count = 0
+        dfs(rr, cc, dir)
 
 N, M = map(int, input().split())
 r, c, d = map(int, input().split())
