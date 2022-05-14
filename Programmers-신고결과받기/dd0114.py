@@ -1,4 +1,14 @@
+import sys
+
 def solution(id_list, report, k):
+    leng = len(id_list)
+    push = [1<<leng-10]*leng
+    pull = [0]*leng
+    
+    for i in range(report):
+        sh, ll = map(int,sys.stdin.readline().rstrip())
+        
+
     answer = []
     return answer
 
