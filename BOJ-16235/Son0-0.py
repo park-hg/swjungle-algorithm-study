@@ -1,6 +1,4 @@
-# 
 # https://www.acmicpc.net/problem/16235
-
 import sys
 
 input = sys.stdin.readline
@@ -18,55 +16,58 @@ for row in range(N):
     for col in range(N):
         flist[str(row)+str(col)] = 5
 
+new_tree = []
+
 for _ in range(M):
     t = list(map(int, input().split()))
-    tree[str(t[0] - 1) + str(t[1] - 1)].append(t[2])
+    idx = str(t[0] - 1) + str(t[1] - 1)
+    tree[idx].append(t[2])
 
 dx = [-1, -1, -1, 0, 0, 1, 1, 1]
 dy = [-1, 0, 1, -1, 1, -1, 0, 1]
 
 
 def ss():
-    for row in range(N):
-        for col in range(N):
-            idx = str(row) + str(col)
-            if tree[idx]:
-                temp = []
-                tree[idx].sort(reverse=True)
-                while tree[idx]:
-                    t = tree[idx].pop()
-                    if t <= flist[idx]:
-                        flist[idx] -= t
-                        t += 1
-                        temp.append(t)
-                    else:
-                        flist[idx] += (t // 2)
-                tree[idx] = temp
+    for tt in tree:
+        if tree[tt]:
+            temp = []
+            dead, tcnt = 0, 0
+            tree[tt].sort(reverse=True)
+            while tree[tt]:
+                t = tree[tt].pop()
+                if t <= flist[tt]:
+                    flist[tt] -= t
+                    t += 1
+                    if t % 5 == 0:
+                        tcnt += 1
+                    temp.append(t)
+                else:
+                    dead += t // 2
+            if tcnt != 0:
+                new_tree.append((int(tt[0]), int(tt[1]), tcnt))
+            tree[tt] = temp
+            flist[tt] += dead
+        flist[tt] += A[int(tt[0])][int(tt[1])]
 
 
-def fw():
-
-    for x in range(N):
-        for y in range(N):
-            idx = str(x) + str(y)
-            flist[idx] += A[x][y]
-            for t in tree[idx]:
-                if (t % 5) == 0:
-                    for i in range(8):
-                        nx, ny = x + dx[i], y + dy[i]
-                        if 0 <= nx < N and 0 <= ny < N:
-                            idx = str(nx) + str(ny)
-                            tree[idx].append(1)
+def fall():
+    while new_tree:
+        t = new_tree.pop()
+        for i in range(8):
+            nx, ny = t[0] + dx[i], t[1] + dy[i]
+            if 0 <= nx < N and 0 <= ny < N:
+                idx = str(nx) + str(ny)
+                for _ in range(t[2]):
+                    tree[idx].append(1)
 
 
-def solution():
-    global K
-
+def solution(K):
     while K != 0:
-        # spring summer
+        # spring summer winter
         ss()
-        # fall winter
-        fw()
+        # fall
+        if new_tree:
+            fall()
         K -= 1
 
     cnt = 0
@@ -75,4 +76,4 @@ def solution():
     print(cnt)
 
 
-solution()
+solution(K)
