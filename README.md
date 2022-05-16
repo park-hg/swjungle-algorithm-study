@@ -42,6 +42,8 @@
 |14627|[파닭파닭](https://www.acmicpc.net/problem/14627)| 실버 3 |
 |16197|[두 동전](https://www.acmicpc.net/problem/16197)| 골드 4 |
 |16235|[나무 제테크](https://www.acmicpc.net/problem/16235)| 골드 4 |
+|16987|[계란으로 계란치기](https://www.acmicpc.net/problem/16987)| 실버 1 |
+
 ### ✨ PROGRAMMERS
 
 |출처|문제| 난이도 |
