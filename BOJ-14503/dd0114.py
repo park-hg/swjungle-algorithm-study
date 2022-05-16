@@ -28,7 +28,7 @@ while q :
 
     new_l = l+dl[d]
     new_r = r+dr[d]
-    new_d = (d+1)%4
+    new_d = (d-1)%4
 
     if check[new_l][new_r] == 0:
         d = new_d
