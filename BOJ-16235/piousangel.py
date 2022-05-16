@@ -1,5 +1,3 @@
-#죄송합니다. 다시 공부해서 풀겠습니다.
-
 import sys
 sys.stdin = open('sample.txt')
 input = sys.stdin.readline
