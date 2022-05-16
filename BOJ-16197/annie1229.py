@@ -1,4 +1,4 @@
-# 18. 두 동전(BOJ-16197) # 아직 푸는 중입니다.. 다시 풀어서 올리겠습니다!
+# 18. 두 동전(BOJ-16197) 풀이 참고
 import sys
 from collections import deque
 sys.stdin = open('input.txt')
@@ -15,20 +15,23 @@ for n in range(N):
         if t == 'o':
             coins.append((n, idx))
 
-print(board)
-print(coins)
+def is_out(x, y):
+    if x >= 0 and x < N and y >= 0 and y < M:
+        return False
+    return True
+
 def bfs():
     q = deque()
-    dx = [1, 0, -1, 0]
+    dx = [-1, 0, 1, 0]
     dy = [0, 1, 0, -1]
-    q.append((coins[0], coins[1], 1))
+    q.append((coins[0], coins[1], 0))
+
     while q:
         coin1, coin2, count = q.popleft()
-        # print('coin1 ', coin1, 'coin2', coin2, count)
         x1, y1 = coin1
         x2, y2 = coin2
         
-        if count >= 10:
+        if count > 10:
             break
 
         for n in range(4):
@@ -36,24 +39,28 @@ def bfs():
             next_y1 = y1 + dy[n]
             next_x2 = x2 + dx[n]
             next_y2 = y2 + dy[n]
+            
+            is_coin1_out = is_out(next_x1, next_y1)
+            is_coin2_out = is_out(next_x2, next_y2)
 
-            if board[next_x1][next_y1] == '#':
+            if (is_coin1_out and not is_coin2_out) or (not is_coin1_out and is_coin2_out):
+                if count + 1 > 10:
+                    return -1
+                return count + 1
+            
+            if is_coin1_out and is_coin2_out:
+                continue
+
+            if board[next_x1][next_y1] == '#' and board[next_x2][next_y2] == '#':
+                continue
+            elif board[next_x1][next_y1] == '#':
                 next_x1 = x1
                 next_y1 = y1
-            if board[next_x2][next_y2] == '#':
+            elif board[next_x2][next_y2] == '#':
                 next_x2 = x2
                 next_y2 = y2
 
-            if next_x1 >= 0 and next_y1 >= 0 and next_x1 < N and next_y1 < M:
-                if next_x2 >= 0 and next_y2 >= 0 and next_x2 < N and next_y2 < M:
-                    next_coin1 = (next_x1, next_y1)
-                    next_coin2 = (next_x2, next_y2)
-                    if next_coin1 != next_coin2:
-                        q.append((next_coin1, next_coin2, count+1))
-                else:
-                    print(n, '동전2가 떨어졌습니다.', count + 1)
-            else:
-                if next_x2 >= 0 and next_y2 >= 0 and next_x2 < N and next_y2 < M and board[next_x2][next_y2] != '#':
-                    print(n, '동전1이 떨어졌습니다.', count + 1)
-    print(count)
-bfs()
+            q.append(((next_x1, next_y1), (next_x2, next_y2), count + 1))
+    return -1
+
+print(bfs())
