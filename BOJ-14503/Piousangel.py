@@ -36,10 +36,11 @@ def find_robot(board, visited, r, c, d) :
         print("행, 열", now_r, now_c)
         # print("now_d", now_d)
         # print(now_a)
-        answer = max(answer, cnt)
+        answer = max(answer, cnt+1)
         next_r = now_r + move_d[now_d][1] #row
         next_c = now_c + move_d[now_d][0] #col
 
+        
         if visited[next_r][next_c] != True and board[next_r][next_c] == 0 :
             if now_d == 0 :
                 visited[next_r][next_c] = True
@@ -55,28 +56,22 @@ def find_robot(board, visited, r, c, d) :
                     q.append([now_r, now_c, now_d-1, cnt , now_a + 1])
             else:  # 4번 진행되었을 때 후진한다
 
-                # if now_d == 0 :
-                #     now_d = 3
-                #     next_r = now_r + move_d[now_d][1]
-                #     next_c = now_c + move_d[now_d][0]
-                # else:
-                #     now_d -= 1
-                #     next_r = now_r + move_d[now_d][1]
-                #     next_c = now_c + move_d[now_d][0]
-
                 temp_r = now_r - move_d[now_d][1]
                 temp_c = now_c - move_d[now_d][0]
                 
-                if visited[temp_r][temp_c] != True and board[temp_r][temp_c] == 0 :
-                    visited[temp_r][temp_c] = True
-                    if now_d == 0 :
-                        q.append([temp_r, temp_c, 3, cnt + 1, 0])
+                if board[temp_r][temp_c] == 0 :
+                    if visited[temp_r][temp_c] != True :
+                        visited[temp_r][temp_c] = True
+                        if now_d < 2 :
+                            q.append([temp_r, temp_c, 3 - now_d, cnt + 1, 0])
+                        else:
+                            q.append([temp_r, temp_c, now_d - 2, cnt + 1, 0])
                     else:
-                        q.append([temp_r, temp_c, now_d-1, cnt + 1, 0])
-                else:
-                    break
+                        if now_d < 2 :
+                            q.append([temp_r, temp_c, 3 - now_d, cnt , 0])
+                        else:
+                            q.append([temp_r, temp_c, now_d - 2, cnt , 0])
 
-  
 find_robot(board, visited, r, c, d)
 print(answer)
 
