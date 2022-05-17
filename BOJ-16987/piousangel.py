@@ -45,17 +45,29 @@ def dfs(egg_info, visited, idx, maxidx) :
             now_naegudo -= egg_info[i][1]      #손에 들고있는 계란의 내구도 => 내구도 - 무게
             temp = egg_info[i][0] - now_weight       #옆에 손 계란의 내구도 => 내구도 - 무게
             
-            # if now_naegudo <= 0 :
-            #     visited[idx] = True
-            # if temp <= 0 :
-            #     visited[i] = True
-   
             egg_info[idx] = [now_naegudo, now_weight]
             egg_info[i] = [temp, egg_info[i][1]]
 
-            dfs(egg_info, visited, idx+1, maxidx)
+            if now_naegudo <= 0 and temp > 0:
+                visited[idx] = True
+                dfs(egg_info, visited, idx+1, maxidx)
+                visited[idx] = False
+
+            elif now_naegudo <= 0 and temp <= 0:
+                visited[i] = True
+                visited[idx] = True
+                dfs(egg_info, visited, idx+1, maxidx)
+                visited[i] = False
+                visited[idx] = False
+            elif now_naegudo > 0 and temp <= 0 :
+                visited[i] = True
+                dfs(egg_info, visited, idx+1, maxidx)
+                visited[i] = False
+            
+            # dfs(egg_info, visited, idx+1, maxidx)
             # visited[i] = False
             # visited[idx] = False
+
         elif i != idx and visited[i] != True and now_naegudo <= 0 or egg_info[i][0] <= 0 :
             # visited[i] = True
             dfs(egg_info, visited, idx+1, maxidx)
