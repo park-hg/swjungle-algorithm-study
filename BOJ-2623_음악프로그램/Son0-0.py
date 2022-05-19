@@ -9,12 +9,9 @@ indegree = [0 for _ in range(N + 1)]
 
 for _ in range(M):
     llist = list(map(int, input().split()))
-    for idx in range(1, len(llist) - 1):
+    for idx in range(1, llist[0]):
         graph[llist[idx]].append(llist[idx + 1])
         indegree[llist[idx + 1]] += 1
-        
-print(graph)
-print(indegree)
 
 
 def topology_sort(result=[]):
@@ -37,7 +34,7 @@ def topology_sort(result=[]):
 
 def solution():
     result = topology_sort()
-    print(*result, sep='\n') if result else print(0)
+    print(*result, sep='\n') if len(result) == N else print(0)
 
 
 solution()
