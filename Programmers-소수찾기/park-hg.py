@@ -1,4 +1,3 @@
-from collections import deque
 import math
 
 def solution(numbers):
