@@ -56,6 +56,7 @@
 |2021 카카오 채용연계형 인턴십|[표 편집](https://programmers.co.kr/learn/courses/30/lessons/81303)| 레벨 3 |
 |2021 KAKAO BLIND RECRUITMENT|[순위 검색](https://programmers.co.kr/learn/courses/30/lessons/72412)| 레벨 2 |
 |2022 KAKAO BLIND RECRUITMENT|[신고 결과 받기](https://programmers.co.kr/learn/courses/30/lessons/92334)| 레벨 1 |
+|완전 탐색|[소수 찾기](https://programmers.co.kr/learn/courses/30/lessons/42839)| 레벨 1 |
 
 ### ✨ LEETCODE
 
