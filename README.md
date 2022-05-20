@@ -44,6 +44,7 @@
 |16197|[두 동전](https://www.acmicpc.net/problem/16197)| 골드 4 |
 |16235|[나무 제테크](https://www.acmicpc.net/problem/16235)| 골드 4 |
 |16987|[계란으로 계란치기](https://www.acmicpc.net/problem/16987)| 실버 1 |
+|3885|[회색 영역](https://www.acmicpc.net/problem/3885)| 실버 1 |
 
 ### ✨ PROGRAMMERS
 
