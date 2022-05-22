@@ -45,6 +45,7 @@
 |16197|[두 동전](https://www.acmicpc.net/problem/16197)| 골드 4 |
 |16235|[나무 제테크](https://www.acmicpc.net/problem/16235)| 골드 4 |
 |16987|[계란으로 계란치기](https://www.acmicpc.net/problem/16987)| 실버 1 |
+|17225|[세훈이의 선물가게](https://www.acmicpc.net/problem/17225)| 실버 1 |
 
 ### ✨ PROGRAMMERS
 
