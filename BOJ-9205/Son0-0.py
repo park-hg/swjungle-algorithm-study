@@ -24,9 +24,11 @@ def solution():
             conv.append([conv_x, conv_y])
         fest_x, fest_y = map(int, input().split())
         # 집, 편의점, 페스티벌 좌표 ---
+        
 
         # bfs ---
         q = deque()
+        q.append([home_x, home_y])
         for data in conv:
             if abs(data[0] - home_x) + abs(data[1] - home_y) <= 1000:
                 q.append([data[0], data[1]])
