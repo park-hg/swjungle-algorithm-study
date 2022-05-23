@@ -9,7 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d863347-36fa-422c-9172-7882b4453f5e" name="Changes" comment="">
+    <list default="true" id="0d863347-36fa-422c-9172-7882b4453f5e" name="Changes" comment="feat : 박건희 - boj - 17225 세훈이의 선물 가게">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +77,19 @@
       <workItem from="1652938880455" duration="118000" />
       <workItem from="1653034270346" duration="287000" />
       <workItem from="1653034591417" duration="12000" />
+      <workItem from="1653144867359" duration="107000" />
+      <workItem from="1653231491134" duration="78000" />
+      <workItem from="1653285965269" duration="21000" />
+      <workItem from="1653316326356" duration="2000" />
     </task>
+    <task id="LOCAL-00001" summary="feat : 박건희 - boj - 17225 세훈이의 선물 가게">
+      <created>1653231561669</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653231561669</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,5 +106,20 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat : 박건희 - boj - 17225 세훈이의 선물 가게" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : 박건희 - boj - 17225 세훈이의 선물 가게" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/BOJ-17225_세훈이의 선물가게/connieya.cpp</url>
+          <line>30</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
