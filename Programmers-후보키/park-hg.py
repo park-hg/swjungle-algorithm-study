@@ -2,7 +2,7 @@ def solution(relations):
     r = len(relations)
     c = len(relations[0])
     
-    candidate = []
+    uniqueness = []
     for bit in range(1<<c):
         S = set()
         for rel in relations:
@@ -12,13 +12,13 @@ def solution(relations):
                     subset += rel[i]
             S.add(subset)
         if len(S) == r:
-            candidate.append(bit)
+            uniqueness.append(bit)
 
-    uniqueness = [True]*len(candidate)
-    for i in range(len(candidate)-1):
-        if uniqueness[i]:
-            for j in range(i+1, len(candidate)):
-                if candidate[i] & candidate[j] == candidate[i]:
-                    uniqueness[j] = False
+    minimnality = [True]*len(uniqueness)
+    for i in range(len(uniqueness)-1):
+        if minimnality[i]:
+            for j in range(i+1, len(uniqueness)):
+                if uniqueness[i] & uniqueness[j] == uniqueness[i]:
+                    minimnality[j] = False
 
-    return sum(uniqueness)
+    return sum(minimnality)
