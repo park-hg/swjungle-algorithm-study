@@ -45,6 +45,13 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -80,7 +87,8 @@
       <workItem from="1653144867359" duration="107000" />
       <workItem from="1653231491134" duration="78000" />
       <workItem from="1653285965269" duration="21000" />
-      <workItem from="1653316326356" duration="2000" />
+      <workItem from="1653316326356" duration="106000" />
+      <workItem from="1653323444935" duration="15000" />
     </task>
     <task id="LOCAL-00001" summary="feat : 박건희 - boj - 17225 세훈이의 선물 가게">
       <created>1653231561669</created>
