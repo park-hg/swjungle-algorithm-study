@@ -22,11 +22,6 @@ def solution():
             num -= nums[left]
             left += 1
 
-    if answer == sys.maxsize:
-        print(0)
-        return
-
-    print(answer)
-
+    print(0) if answer == sys.maxsize else print(answer)
 
 solution()
