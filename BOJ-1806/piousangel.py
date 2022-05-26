@@ -17,12 +17,11 @@ def search(n_list, s) :
 
     while q :
         if idx == len(n_list)-1:
-            while q :  #마지막 인덱스까지 왔으면 앞에거 빼주면서 s보다 큰거 있는지 chk 
+            while len(q) >= 1 :  #마지막 인덱스까지 왔으면 앞에거 빼주면서 s보다 큰거 있는지 chk 
                 temp = q.popleft()
                 total -= temp
                 if total >= s :
                     answer = min(answer, len(q))
-
             break
 
         if total < s :
@@ -35,6 +34,7 @@ def search(n_list, s) :
             total -= temp
 
 search(n_list, s)
+
 if answer == 1000000001 :
     print(0)
 else:
