@@ -24,9 +24,8 @@ while True:
 
     if total >= s :
         n_len = idx - temp_idx 
-        # print(n_len)
         answer = min(answer, n_len)
-        temp_idx +=1
+        temp_idx +=1       #하나씩 가게
         idx = temp_idx
         total = 0
 
