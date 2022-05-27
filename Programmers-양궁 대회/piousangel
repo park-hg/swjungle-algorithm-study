@@ -1,0 +1,49 @@
+# 라이언은 저번대회 우승자
+# 라이언에게 패널티를 줘야함
+# 같은 점수를 더 많이 맞춘 사람이 점수를 가져감
+# 만약 동일하게 맞춘경우 어피치가 가져감 (딱 k점)
+# 모두 한발도 못맞춘 경우 점수 k는 사라짐
+# 모든 과젹 점수에 대해 최종 점수 계산하고 최종점수가 같을 경우 어피치가 우승
+# 어피치가 n발 다쏨 -> 라이언이 쏠 차례
+# 라이언이 가장 큰 점수차이로 이기기 위해 n발을 과녁에 쏴야함
+# 라이언이 우승할 수 없는 경우 answer에 -1을 담아서 리턴
+# 큰 점수를 내야하긴 하는데 거기서 오는 기회비용도 생각해야
+# 라이언이 가장 큰 점수 차이로 우승할 수 있는 방법이 여러 가지 일 경우, 가장 낮은 점수를 더 많이 맞힌 경우를 return
+
+import copy
+
+def dfs(info, lion_box, idx, maxIdx, maxPoint) :
+    global answer
+    
+    if idx == maxIdx :
+        lion_point = 0
+        apeach_point = 0
+        
+        for i in range(len(info)) :
+            if info[i] != 0 or lion_box[i] != 0 :
+                if info[i] >= lion_box[i] :
+                    apeach_point += 10 - i #피치
+                else :
+                    lion_point += 10 - i #라이언
+        
+        if lion_point > apeach_point : #max 갱신
+            if lion_point - apeach_point >= maxPoint :
+                maxPoint = lion_point - apeach_point 
+                answer = copy.deepcopy(lion_box)
+        return
+    
+    for i in range(len(info)) :
+        if lion_box[i] <= info[i] :
+            lion_box[i] += 1
+            dfs(info, lion_box, idx+1, maxIdx, maxPoint)
+            lion_box[i] -= 1
+
+answer = []
+def solution(n, info):
+    global answer
+    maxPoint = -10001
+    lion_box = [0 for _ in range(n+1)]
+    # print("info", info)
+    # print("lion_box", lion_box)
+    dfs(info, lion_box, 0, n, maxPoint)
+    return answer
