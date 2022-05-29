@@ -30,8 +30,9 @@ def solution(n, wires):
       dfs(1, wire_graph, visited, check)
       print(idx, wire, visited.count(True))
       true_cnt = visited.count(True)
-      false_cnt = visited.count(False)
+      false_cnt = visited.count(False) - 1
       diff = abs(true_cnt - false_cnt)
+      print('diff', diff)
       if diff < min_diff:
         min_diff = diff
         min_cnt = true_cnt
