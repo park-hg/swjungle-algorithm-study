@@ -24,5 +24,4 @@ while left < right < len(s):
         answer = min(answer, right-left)
         left += 1
 
-
 print(answer)
