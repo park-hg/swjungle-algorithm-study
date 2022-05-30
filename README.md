@@ -60,6 +60,7 @@
 |2022 KAKAO BLIND RECRUITMENT|[신고 결과 받기](https://programmers.co.kr/learn/courses/30/lessons/92334)| 레벨 1 |
 |완전 탐색|[소수 찾기](https://programmers.co.kr/learn/courses/30/lessons/42839)| 레벨 1 |
 |프로그래머스 weekly|[전력망 둘로나누기](https://programmers.co.kr/learn/courses/30/lessons/86971)| 레벨 2 |
+|연습문제|[야근 지수](https://programmers.co.kr/learn/courses/30/lessons/12927)| 레벨 3 |
 
 ### ✨ LEETCODE
 
