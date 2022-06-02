@@ -34,11 +34,21 @@ while q :
                 next_t = now_t+1+ j*spend[next_n][next_m]
                 if next_t > t:
                     continue
-                if next_w > max_work[next_t][next_n][next_m]:
+
+                if next_w > max_work[next_t][next_n][next_m] and next_w > max_work[next_t-1][next_n][next_m]:
                     max_work[next_t][next_n][next_m] = next_w
                     q.append((next_n, next_m, next_w, next_t))
+                    same_nm = next_t+1
+                    while True :
+                        if same_nm >t :
+                                break
+                        if next_w > max_work[same_nm][next_n][next_m]:
+                            max_work[same_nm][next_n][next_m] = next_w 
+                            same_nm += 1
+                        else :
+                            break
 
-for i in range(t+1):
-    answer = max(answer, max_work[i][-1][-1])
+
+answer = max_work[i][-1][-1]
 
 print(answer)
