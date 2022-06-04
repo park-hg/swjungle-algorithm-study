@@ -10,12 +10,12 @@ if len(text) < 10:
   result = list(text)
   print(' '.join(result))
 else:
+  max_num = (len(text) - 9) // 2 + 9
   copy_text = text[:]
   zeros_idx = []
 
   while '0' in copy_text:
     zero_idx = copy_text.index('0')
-    num = copy_text[(zero_idx-1):(zero_idx+1)]
     zeros_idx.append(zero_idx - 1 + len(zeros_idx) * 2)
     copy_text = copy_text[:zero_idx-1] + copy_text[zero_idx+1:]
 
@@ -23,6 +23,9 @@ else:
     temp += t
     if idx in zeros_idx:
       continue
+    if idx + 1 < len(text):
+      if int(temp + text[idx+1]) <= max_num and (temp + text[idx+1]) not in result:
+        continue
     if temp not in result:
       result.append(temp)
       temp = ''
