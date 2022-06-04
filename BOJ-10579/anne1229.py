@@ -16,7 +16,7 @@ else:
   while '0' in copy_text:
     zero_idx = copy_text.index('0')
     num = copy_text[(zero_idx-1):(zero_idx+1)]
-    zeros_idx.append(zero_idx - 1)
+    zeros_idx.append(zero_idx - 1 + len(zeros_idx) * 2)
     copy_text = copy_text[:zero_idx-1] + copy_text[zero_idx+1:]
 
   for idx, t in enumerate(text):
