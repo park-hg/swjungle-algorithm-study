@@ -4,32 +4,32 @@ s_len = len(s)
 num = 0
 
 if s_len <= 9:
-    num = s_len
+    for i in s:
+        print(i,end=' ')
+
 else :
     num = 9+(s_len-9)//2
+    check_default = (1<<(num+1))-1
+    first = ("",s,check_default)
+    q = [first]
 
-first = ([],s,num)
-q = [first]
-answer =[]
+    while q:
+        pop = q.pop()
 
-while q:
-    pop = q.pop()
-    n_list = pop[0]
-    r_list = pop[1]
-    r_num = pop[2]
-    
-    for i in range(1,3):
-        new_num = pop[1][0:i]
-        new_list = pop[1][i:]
-        remain = r_num -1
-
-        if new_num in n_list:
-            continue
+        for i in range(1,3):
+            n_list = pop[0]
+            r_list = pop[1]
+            check = pop[2]
         
-        else:
-            if r_num == 0 and r_list == "":
-                print(new_num)
-                break
-            else :
-                n_list.append(new_num)
-                q.append((n_list,r_list,r_num))
+            new_num = r_list[0:i]
+            r_list = r_list[i:]
+            
+            if 1<<int(new_num) & check == 1<<int(new_num):
+                n_list += new_num+" "
+                check = check - (1<<int(new_num))
+
+                if check == 1 and r_list == "":
+                    print(n_list)
+                    exit(0)
+                else :
+                    q.append((n_list,r_list,check))

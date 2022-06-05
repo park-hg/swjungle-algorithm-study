@@ -1,3 +1,14 @@
-a = "112"
-b = "2"
-print(a[1:3])
+a = (1<<4)-1
+b = 1<<2
+
+r_list ="12"
+
+i = 2
+a = '2'
+print( 1<<int(a))
+
+# if (a - b)&b == b:
+#     print(True)
+
+# else :
+#     print(False)
