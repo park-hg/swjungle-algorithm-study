@@ -1,7 +1,5 @@
 s = input()
-
 s_len = len(s)
-num = 0
 
 if s_len <= 9:
     for i in s:
