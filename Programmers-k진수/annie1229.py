@@ -18,7 +18,6 @@ def solution(n, k):
     answer = 0
     ch_num = change_number(n, k)
 
-    nums = []
     temp = ''
     for ch in ch_num:
       if ch != '0':
