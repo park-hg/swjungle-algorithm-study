@@ -6,6 +6,14 @@ def change_number(num, k):
     num //= k
   return result
 
+def is_prime(num):
+  if num == 1:
+    return False
+  for n in range(2, int(num**0.5)+1):
+    if num % n == 0:
+      return False
+  return True
+
 def solution(n, k):
     answer = 0
     ch_num = change_number(n, k)
@@ -17,25 +25,13 @@ def solution(n, k):
         temp += ch
       else:
         if temp:
-          nums.append(int(temp))
+          if is_prime(int(temp)):
+            answer += 1
           temp = ''
     if temp:
-      nums.append(int(temp))
+      if is_prime(int(temp)):
+            answer += 1
 
-    max_num = max(nums)
-    is_prime = [False for _ in range(max_num + 1)]
-    is_prime[2] = True
-    primes = set([2])
-    for i in range(3, max_num + 1):
-      if i % 2:
-        if not is_prime[i]:
-          primes.add(i)
-          for ii in range(i, max_num + 1, i):
-            is_prime[ii] = True
-
-    for num in nums:
-      if num in primes:
-        answer += 1
     print(answer)
     return answer
 
