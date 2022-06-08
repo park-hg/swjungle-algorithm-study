@@ -9,9 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d863347-36fa-422c-9172-7882b4453f5e" name="Changes" comment="feat : 박건희 - boj - 17225 세훈이의 선물 가게">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0d863347-36fa-422c-9172-7882b4453f5e" name="Changes" comment="docs : UPDATE README" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,13 +42,6 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -100,7 +91,8 @@
       <workItem from="1654307252025" duration="31000" />
       <workItem from="1654348181106" duration="702000" />
       <workItem from="1654391607175" duration="21000" />
-      <workItem from="1654607783630" duration="1000" />
+      <workItem from="1654607783630" duration="176000" />
+      <workItem from="1654693732317" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="feat : 박건희 - boj - 17225 세훈이의 선물 가게">
       <created>1653231561669</created>
@@ -109,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653231561669</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="docs : UPDATE README">
+      <created>1654607949574</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1654607949574</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,7 +128,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat : 박건희 - boj - 17225 세훈이의 선물 가게" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : 박건희 - boj - 17225 세훈이의 선물 가게" />
+    <MESSAGE value="docs : UPDATE README" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs : UPDATE README" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
