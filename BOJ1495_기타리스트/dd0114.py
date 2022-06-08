@@ -12,7 +12,6 @@ for i in range(n):
     
     buf1 = d_check & (dummy << v[i])
     buf2 = d_check & (dummy >> v[i])
-
     dummy = buf1|buf2
     
     if dummy == 0:
