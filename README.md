@@ -48,6 +48,7 @@
 |16987|[계란으로 계란치기](https://www.acmicpc.net/problem/16987)| 실버 1 |
 |17225|[세훈이의 선물가게](https://www.acmicpc.net/problem/17225)| 실버 1 |
 
+
 ### ✨ PROGRAMMERS
 
 |출처|문제| 난이도 |
@@ -63,6 +64,7 @@
 |프로그래머스 weekly|[전력망 둘로나누기](https://programmers.co.kr/learn/courses/30/lessons/86971)| 레벨 2 |
 |연습문제|[야근 지수](https://programmers.co.kr/learn/courses/30/lessons/12927)| 레벨 3 |
 |2022 KAKAO BLIND RECRUITMENT |[k진수에서 소수 개수 구하기 ](https://programmers.co.kr/learn/courses/30/lessons/92335)| 레벨 2 |
+|프로그래머스 문제 |[순위](https://programmers.co.kr/learn/courses/30/lessons/49191https://programmers.co.kr/learn/courses/30/lessons/49191)| 레벨 3 |
 
 ### ✨ LEETCODE
 
