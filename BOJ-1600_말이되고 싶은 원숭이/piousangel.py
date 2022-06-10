@@ -30,7 +30,6 @@ def bfs(board, visited, k) :
         if x == len(board[0]) - 1 and y == len(board) :
             answer = min(answer, cnt)
 
-      
         if k > 0 :
             # chkhorse(x, y, board, visited)
             if 0 <= x - 2 < len(board[0]) and 0 <= y - 1 < len(board) :
@@ -83,17 +82,15 @@ def bfs(board, visited, k) :
                     visited[ny][nx] = True
                     q.append([ny,nx,cnt+1, k-1])
                 
-            else:
-                for i in range(4) :
+        else:
+            for i in range(4) :
+                nx = x + dx[i]
+                ny = y + dy[i]
 
-                    nx = x + dx[i]
-                    ny = y + dy[i]
-
-                    if 0 <= nx < len(board[0]) and 0 <= ny < len(board) :
-                        if board[ny][nx] != 1 and visited[ny][nx] == False :
-                            visited[ny][nx] = True
-                            q.append([ny,nx,cnt+1, k])
-
+                if 0 <= nx < len(board[0]) and 0 <= ny < len(board) :
+                    if board[ny][nx] != 1 and visited[ny][nx] == False :
+                        visited[ny][nx] = True
+                        q.append([ny,nx,cnt+1, k])
 
 answer = 10000001
 bfs(board, visited, k)
