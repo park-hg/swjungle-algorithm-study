@@ -27,7 +27,7 @@ def bfs(board, visited, k) :
         
         y, x, cnt, k = q.popleft()
 
-        if x == len(board[0]) - 1 and y == len(board) :
+        if x == len(board[0]) - 1 and y == len(board)-1 :
             answer = min(answer, cnt)
 
         if k > 0 :
@@ -44,7 +44,7 @@ def bfs(board, visited, k) :
                 ny = y - 2
                 if board[ny][nx] != 1 and visited[ny][nx] == False :
                     visited[ny][nx] = True
-                    q.append([ny,nx,cnt+1, k])
+                    q.append([ny,nx,cnt+1, k-1])
             if 0 <= x + 1 < len(board[0]) and 0 <= y - 2 < len(board) :
                 nx = x + 1
                 ny = y - 2
