@@ -18,7 +18,7 @@ def solution(word):
 
 solution("AAAAA") #5
 solution("AAAAE") #6
-solution("AAAE") #10  = 1 + 1 + 1 + 5 + 1
+solution("AAAE") #10  = 1 + 1 + 1 + 5 + 2
 solution("I") #1563  = 780 + 780 + 3
 solution("EIO") #1189 = 780 + 155 + 155 + 30 + 30 + 30 + 5 + 4
 
