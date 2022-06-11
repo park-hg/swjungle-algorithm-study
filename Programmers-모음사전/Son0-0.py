@@ -1,5 +1,3 @@
-answer = 0
-
 def solution(word):
     alpha = 'AEIOU'
     llist = []
