@@ -1,103 +1,63 @@
 import sys
 from collections import deque
-
 sys.stdin = open('sample.txt')
 input = sys.stdin.readline
+
+
+k = int(input())
+col, row = map(int, input().split())
 
 dx = [0,0,1,-1]
 dy = [1,-1,0,0]
 
-k = int(input())
+dhorseX = [-1, -2, -2, -1, 1, 2, 2, 1]
+dhorseY = [-2, -1, 1, 2, 2, 1, -1, -2]
 
-col, row = map(int, input().split())
-
-visited = [[False] * col for i in range(row)]
 board = []
+visited = [[-1]*col for _ in range(row)]
 for i in range(row) :
     board.append(list(map(int, input().split())))
 
+# print(board)
+# print(visited)
 
 def bfs(board, visited, k) :
-    global answer
+
     q = deque()
+    q.append([0, 0, k, 0])
 
-    q.append([0,0,0,k])
-    visited[0][0] = True
     while q :
-        
-        y, x, cnt, k = q.popleft()
 
-        if x == len(board[0]) - 1 and y == len(board)-1 :
-            answer = min(answer, cnt)
+        y, x, k, cnt = q.popleft()
+
+        if x == len(board[0]) - 1 and y == len(board) - 1 :
+            return cnt
+
+        if k > 0 :
+
+            for i in range(8) :
+                nx = x + dhorseX[i]
+                ny = y + dhorseY[i]
+
+                if 0 <= nx < len(board[0]) and 0 <= ny < len(board) and board[ny][nx] == 0 :
+                    if visited[ny][nx] == -1 or visited[ny][nx] < k - 1:
+                        visited[ny][nx] = k - 1
+                        q.append([ny, nx, k-1, cnt+1])
 
         for i in range(4) :
             nx = x + dx[i]
             ny = y + dy[i]
 
-            if 0 <= nx < len(board[0]) and 0 <= ny < len(board) :
-                if board[ny][nx] != 1 and visited[ny][nx] == False :
-                    visited[ny][nx] = True
-                    q.append([ny,nx,cnt+1, k])
-                    # q.appendleft([ny,nx,cnt+1, k])
+            if 0 <= nx < len(board[0]) and 0 <= ny < len(board) and board[ny][nx] == 0 :
+                if visited[ny][nx] == -1 or visited[ny][nx] < k :
+                    visited[ny][nx] = k
+                    q.append([ny, nx, k, cnt+1])
 
-        if k > 0 :
-            # chkhorse(x, y, board, visited)
-            if 0 <= x - 2 < len(board[0]) and 0 <= y - 1 < len(board) :
-                nx = x - 2
-                ny = y - 1
-                if board[ny][nx] != 1 and visited[ny][nx] == False :
-                    visited[ny][nx] = True
-                    q.append([ny,nx,cnt+1, k-1])
+    return -1
 
-            if 0 <= x - 1 < len(board[0]) and 0 <= y - 2 < len(board) :
-                nx = x - 1
-                ny = y - 2
-                if board[ny][nx] != 1 and visited[ny][nx] == False :
-                    visited[ny][nx] = True
-                    q.append([ny,nx,cnt+1, k-1])
-            if 0 <= x + 1 < len(board[0]) and 0 <= y - 2 < len(board) :
-                nx = x + 1
-                ny = y - 2
-                if board[ny][nx] != 1 and visited[ny][nx] == False :
-                    visited[ny][nx] = True
-                    q.append([ny,nx,cnt+1, k-1])
-            if 0 <= x + 2 < len(board[0]) and 0 <= y - 1 < len(board) :
-                nx = x + 2
-                ny = y - 1 
-                if board[ny][nx] != 1 and visited[ny][nx] == False :
-                    visited[ny][nx] = True
-                    q.append([ny,nx,cnt+1, k-1])
-            if 0 <= x + 2 < len(board[0]) and 0 <= y + 1 < len(board) :
-                nx = x + 2
-                ny = y + 1
-                if board[ny][nx] != 1 and visited[ny][nx] == False :
-                    visited[ny][nx] = True
-                    q.append([ny,nx,cnt+1, k-1])
-            if 0 <= x + 1 < len(board[0]) and 0 <= y + 2 < len(board) :
-                nx = x + 1
-                ny = y + 2
-                if board[ny][nx] != 1 and visited[ny][nx] == False :
-                    visited[ny][nx] = True
-                    q.append([ny,nx,cnt+1, k-1])
-            if 0 <= x - 1 < len(board[0]) and 0 <= y + 2 < len(board) :
-                nx = x - 1
-                ny = y + 2
-                if board[ny][nx] != 1 and visited[ny][nx] == False :
-                    visited[ny][nx] = True
-                    q.append([ny,nx,cnt+1, k-1])
-            if 0 <= x - 2 < len(board[0]) and 0 <= y + 1 < len(board) :
-                nx = x - 2
-                ny = y + 1
-                if board[ny][nx] != 1 and visited[ny][nx] == False :
-                    visited[ny][nx] = True
-                    q.append([ny,nx,cnt+1, k-1])
-                
-        
-           
-
-answer = 10000001
-bfs(board, visited, k)
-if answer == 10000001 :
-    print(-1)
+answer = 0
+if col == 1 and row == 1 :
+    print(0)
 else:
+    answer = bfs(board, visited, k)
     print(answer)
