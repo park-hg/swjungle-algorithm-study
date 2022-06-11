@@ -3,7 +3,10 @@ from collections import deque
 
 k = int(input())
 w,h = map(int,sys.stdin.readline().split())
-answer = w*h+1
+if w == 1 and h == 1:
+    print(0)
+    exit(0)
+
 box =[] 
 
 for i in range(h):
@@ -13,6 +16,9 @@ for i in range(h):
 max_time = (w*h)+1
 
 dp = [[([max_time]*w) for _ in range(h)] for _ in range(k+1)]
+
+for i in range(k+1):
+    dp[i][0][0] = 0
 
 q = deque([(0,0,0,0)])
 
