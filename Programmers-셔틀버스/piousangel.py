@@ -43,18 +43,19 @@ def solution(n, t, m, timetable):
                     if now <= startTime :
                         q.popleft()
                         temp = now - 1
-                        
+                        tt -=1
                     else:
                         temp = startTime
-                    tt -= 1
+                        break
+                    
             break  # n == 1일 때는 무조건 타야하므로
   
         cnt = 0
-        while q :
-            
+    
+        while q :  
             now = q[0]
             cnt += 1
-            if startTime > now : 
+            if startTime >= now : 
                 q.popleft()
   
             if cnt == m :    #다 찼으면 n 빼주고 다음 while문
@@ -63,9 +64,10 @@ def solution(n, t, m, timetable):
                 break
                          
         else:
-             temp = startTime      
-
-                
+            temp = startTime
+            break
+             
+     
     hour = temp // 60
     mintus = temp - (hour * 60)
     str_hour = str(hour)
