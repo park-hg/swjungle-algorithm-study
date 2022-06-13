@@ -1,6 +1,4 @@
 from collections import defaultdict, deque
-from pickle import TRUE
-
 
 def solution(tickets):
     tickets.sort()
@@ -20,7 +18,7 @@ def solution(tickets):
         for i in info[start]:
             if not visited[i]:
                 des = tickets[i][1]
-                visited[i] = TRUE
+                visited[i] = True
                 ret = dfs(arr+[des])
                 visited[i] = False
                 if ret != []:
@@ -28,13 +26,22 @@ def solution(tickets):
         
         return []
     
-    def other(arr, start):
+    # tickets.sort()
+    # info = defaultdict(deque)
 
-        while info[start]:
-            des = info[start].popleft()
-            other(arr, des)
-        
-        arr.append(start)
+    # for i, t in enumerate(tickets):
+    #     s = t[0]
+    #     e = t[1]
+    #     info[s].append(e)
+
+    # def other(arr, start):
+
+    #     while info[start]:
+    #         des = info[start].popleft()
+    #         other(arr, des)
+
+    #     arr.append(start)
+   
     
     dfs(["ICN"])
     return dfs(["ICN"])
