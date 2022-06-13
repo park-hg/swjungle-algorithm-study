@@ -28,6 +28,14 @@ def solution(tickets):
         
         return []
     
+    def other(arr, start):
+
+        while info[start]:
+            des = info[start].popleft()
+            other(arr, des)
+        
+        arr.append(start)
+    
     dfs(["ICN"])
     return dfs(["ICN"])
     # arr = []
