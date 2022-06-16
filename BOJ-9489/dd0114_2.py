@@ -17,7 +17,6 @@ while True:
         continue
 
     while check:
-        buf = []
         links[cnt].append(ind)
         find_parent[ind] = cnt
         
