@@ -65,6 +65,7 @@
 |연습문제|[야근 지수](https://programmers.co.kr/learn/courses/30/lessons/12927)| 레벨 3 |
 |2022 KAKAO BLIND RECRUITMENT |[k진수에서 소수 개수 구하기 ](https://programmers.co.kr/learn/courses/30/lessons/92335)| 레벨 2 |
 |프로그래머스 문제 |[순위](https://programmers.co.kr/learn/courses/30/lessons/49191https://programmers.co.kr/learn/courses/30/lessons/49191)| 레벨 3 |
+|프로그래머스 문제 |[줄서는방법](https://programmers.co.kr/learn/courses/30/lessons/12936?language=python3)| 레벨 2 |
 
 ### ✨ LEETCODE
 
