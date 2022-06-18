@@ -32,7 +32,7 @@ def solution(expression):
                     new = new_list[ind-1] - new_list[ind+1]
 
                 else :
-                    new = new = new_list[ind-1] * new_list[ind+1]
+                    new = new_list[ind-1] * new_list[ind+1]
 
                 new_list = new_list[:ind-1]+[new]+new_list[ind+2:]
         
