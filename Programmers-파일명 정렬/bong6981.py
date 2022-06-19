@@ -30,3 +30,8 @@ def solution(files):
     for e1, e2, idx in sort_info:
         answer.append(files[idx])
     return answer
+
+files =["O00321", "O49qcGPHuRLR5FEfoO00321"]
+# files = ["F-5 Freedom Fighter", "B-50 Superfortress", "A-10 Thunderbolt II", "F-14 Tomcat"]
+# files = ["img12.png", "img10.png", "img02.png", "img1.png", "IMG01.GIF", "img2.JPG"]
+print(solution(files))

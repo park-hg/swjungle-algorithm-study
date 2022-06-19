@@ -1,1 +1,7 @@
-print(1<<0)
+a = "abcd"
+b = "aaaaaaaa"
+l = [a,b]
+
+l.sort()
+
+print(l)
