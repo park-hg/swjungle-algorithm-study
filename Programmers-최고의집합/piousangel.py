@@ -14,7 +14,7 @@ def solution(n, s):
     
     while n > 0 :
         
-        temp = math.ceil(s/n)
+        temp = int(s/n)
         answer.append(temp)
         s -= temp
         n -= 1
